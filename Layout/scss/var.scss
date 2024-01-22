@@ -1,0 +1,30 @@
+// fonts
+
+// color
+
+// var
+$breakpoint1200: 1200px;
+$breakpoint992: 992px;
+$breakpoint768: 768px;
+$breakpoint576: 576px;
+
+$container: 1200;
+$pad: 20;
+
+.container {
+	max-width: ($container + $pad) + px;
+	margin: 0 auto;
+    padding: 0 $pad + px;
+    @media (max-width: $breakpoint1200){
+        max-width: 1200px;
+    }
+    @media (max-width: $breakpoint992){
+        max-width: 970px;
+    }
+    @media (max-width: $breakpoint768){
+        max-width: 740px;
+    }
+    @media (max-width: $breakpoint576){
+        max-width: none;
+    }
+}
