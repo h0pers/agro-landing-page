@@ -142,17 +142,17 @@ function js(){
 
 function img(){
     return src(path.src.img, { base: srcPath + 'img/' } )
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 80, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })
-        ]))
+        // .pipe(imagemin([
+        //     imagemin.gifsicle({interlaced: true}),
+        //     imagemin.mozjpeg({quality: 80, progressive: true}),
+        //     imagemin.optipng({optimizationLevel: 5}),
+        //     imagemin.svgo({
+        //         plugins: [
+        //             {removeViewBox: true},
+        //             {cleanupIDs: false}
+        //         ]
+        //     })
+        // ]))
         .pipe(dest(path.build.img))
         .pipe(browserSync.reload({stream: true}));
 }

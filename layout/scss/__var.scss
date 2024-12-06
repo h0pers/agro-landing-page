@@ -1,0 +1,243 @@
+// fonts
+$montserrat: "Montserrat", sans-serif;
+
+$fs-h1: 42px;
+$fs-h2: 28px;
+$fs-h3: 21px;
+$fs-h4: 18px;
+$fs-h5: 16px;
+$fs-default: 14px;
+$fs-span: 12px;
+// color
+$background-green: #228B22;
+$background-black: #111;
+$text-secondary: rgba(17, 17, 17, 0.75);
+$text-secondary-opposite: rgba(255, 255, 255, 0.75);
+$hr-color: #222;
+
+$button-padding: 10px 30px;
+$button-radius: 5px;
+$button-primary-background: #228B22;
+$button-primary-background-disabled: #246424;
+$button-primary-color: #fff;
+$button-secondary-background: #fff;
+$button-secondary-color: #000;
+// var
+$default-border-radius: 15px;
+$card-padding: 20px;
+$card-border-radius: 15px;
+$card-details-item-radius: 15px;
+$card-details-item-padding: 10px 20px;
+$drop-down-item-padding: 15px 20px;
+$default-outline: 1px solid rgba(17, 17, 17, 0.15);
+
+$danger-message: #ee4949;
+$success-message: #22be22;
+
+$small-gap: 20px;
+$medium-gap: 40px;
+$large-gap: 60px;
+
+$sm: 540px;
+$md: 720px;
+$lg: 960px;
+$xl: 1140px;
+$xxl: 1300px;
+
+
+$container: 1300;
+$container-fluid: 1520;
+$pad: 20;
+
+.card {
+  padding: $card-padding;
+  background: white;
+  border-radius: $card-border-radius;
+  border: $default-outline;
+  justify-content: center;
+  align-items: center;
+  .card__details__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: $card-details-item-padding;
+    border-radius: $card-details-item-radius;
+    border: $default-outline;
+  }
+
+  img {
+    width: 100%;
+    max-height: 175px;
+    object-fit: contain;
+  }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+	padding: $button-padding;
+	font-size: 12px;
+	font-weight: 600;
+  	border-radius: $button-radius;
+    transition: all 0.3s;
+}
+
+.btn_secondary {
+	@extend .btn;
+	background: $button-secondary-background;
+	color: $button-secondary-color;
+}
+
+.btn_primary {
+  	@extend .btn;
+	background: $button-primary-background;
+	color: $button-primary-color !important;
+}
+
+.btn_primary:disabled {
+  background: $button-primary-background-disabled;
+  pointer-events: none;
+}
+
+.container {
+	max-width: ($container + $pad) + px;
+	margin: 0 auto;
+    padding: 0 $pad + px;
+    @media (max-width: $xxl){
+        max-width: $xl;
+    }
+    @media (max-width: $xl){
+        max-width: $lg;
+    }
+    @media (max-width: $lg){
+        max-width: $md;
+    }
+    @media (max-width: $sm){
+        max-width: none;
+    }
+}
+
+
+
+
+.slider__navigation__button {
+  width: auto !important;
+  pointer-events: auto;
+  cursor: pointer !important;
+}
+
+.container-fluid {
+  @extend .container;
+  max-width: ($container-fluid) + px;
+}
+
+.logos-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: $small-gap;
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+  .logos-slide {
+      white-space: nowrap;
+      display: inline-block;
+      animation: 30s slide infinite linear;
+      img {
+        margin: 0 60px;
+        height: 60px;
+      }
+      span,a {
+        margin: 0 30px;
+        height: 60px;
+      }
+  }
+}
+
+.logos-slider:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.dropdown__item__logo {
+  transition: all 0.3s;
+}
+
+.dropdown__item__logo.active {
+  transform: rotate(180deg);
+}
+
+.dropdown__list {
+  .dropdown__item {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      cursor: pointer;
+      border-radius: $default-border-radius;
+      border: $default-outline;
+      padding: $drop-down-item-padding;
+
+    .dropdown__item__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  }
+
+ .dropdown__toggle__content {
+    margin-top: 15px;
+  }
+}
+
+.content__text__details {
+  display: flex;
+  flex-direction: column;
+  gap: $small-gap;
+}
+
+
+.message {
+    padding: $card-padding;
+    border: $default-outline;
+    border-radius: $default-border-radius;
+    color: white;
+}
+
+.danger-message {
+  background: $danger-message;
+}
+
+.success-message {
+  background: $success-message;
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+  .arrow {
+    display: block;
+    margin: 5px auto;
+    background: white;
+    width: 25px;
+    height: 2px;
+    transition: all 0.3s;
+  }
+}
+
+.burger.active {
+  .arrow:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .arrow:nth-child(2) {
+    opacity: 0;
+  }
+  .arrow:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}

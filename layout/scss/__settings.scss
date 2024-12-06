@@ -19,22 +19,66 @@ html,body{
 	width: 100%;
 	font-size: 100%;
 	line-height: 1;
-	font-size: 14px;
+	font-family: $montserrat;
+	text-transform: uppercase;
+	font-size: $fs-default;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 input,button,textarea{font-family:inherit;}
 
+p {
+	text-transform: uppercase;
+	color: $text-secondary;
+	line-height: 200%;
+}
+input::placeholder {
+	font-weight: 500;
+	text-transform: uppercase;
+}
+input {
+	border-bottom: 1px solid $default-outline;
+	padding-bottom: 10px;
+}
+
 input::-ms-clear{display: none;}
-button{cursor: pointer;}
+button{cursor: pointer;text-transform: uppercase}
 button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
+a, a:visited{text-decoration: none; color: black}
 a:hover{text-decoration: none;}
 ul li{list-style: none;}
-img{vertical-align: top;}
+img{vertical-align: top;pointer-events: none}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+h1 {
+	font-size: $fs-h1;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: $fs-h2;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: $fs-h3;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: $fs-h4;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: $fs-h5;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+span {
+	font-size: $fs-span;
+}
 
 .wrapper{
 	min-height: 100%;
@@ -45,5 +89,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 .page{
 	flex: 1 1 auto;
+	margin-top: 101px;
 }
 /*--------------------*/
